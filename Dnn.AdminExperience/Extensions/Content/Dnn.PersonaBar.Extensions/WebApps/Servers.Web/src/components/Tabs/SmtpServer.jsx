@@ -62,6 +62,7 @@ class SmtpServer extends Component {
             smtpUsername: smtpSettings.smtpUserName,
             smtpPassword: smtpSettings.smtpPassword,
             smtpHostEmail: smtpSettings.smtpHostEmail,
+            smtpPortalEmail: smtpSettings.smtpPortalEmail,
             enableSmtpSsl: smtpSettings.enableSmtpSsl,
             messageSchedulerBatchSize: props.smtpServerInfo.host.messageSchedulerBatchSize
         };
@@ -235,6 +236,14 @@ class SmtpServer extends Component {
                             isGlobal={true}
                             onChange={this.onChangeField.bind(this, "smtpHostEmail")}
                             error={props.errors["smtpHostEmail"]} />
+                    }
+                    {smtpSettingsVisible && areGlobalSettings &&
+                        <EditBlock label={localization.get("plPortalEmail")}
+                            tooltip={localization.get("plPortalEmail.Help")}
+                            value={selectedSmtpSettings.smtpPortalEmail}
+                            isGlobal={true}
+                            onChange={this.onChangeField.bind(this, "smtpPortalEmail")}
+                            error={props.errors["smtpPortalEmail"]} />
                     }
                 </div>
             </GridSystem>
