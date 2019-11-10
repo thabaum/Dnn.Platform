@@ -11,84 +11,84 @@
 
 <% if (ShowEditor) {  %>
 <div class="journalTools">
-    <div id="journalEditor">
-        <div id="journalClose"></div>
-        <textarea id="journalContent" aria-label="Content"></textarea>
-        <div id="tbar">
-            <span id="tbar-perm"></span>
+    <div id="journalEditor" class="journalToolsEditor">
+        <div id="journalClose" class="journalClose"></div>
+        <textarea id="journalContent" aria-label="Content" class="journalContentr"></textarea>
+        <div id="tbar" class="tbar">
+            <span id="tbar-perm" class="tbarPerm"></span>
             <% if (AllowFiles) {  %>
-            <span id="tbar-attach"></span>
+            <span id="tbar-attach" class="tbarAttach"></span>
             <% } %>
             <% if (AllowPhotos) {  %>
-            <span id="tbar-photo"></span>
+            <span id="tbar-photo" class="tbarPhoto"></span>
             <%}%>
-            <div class="securityMenu dnnClear">
-                <div class="handle"></div>
-                <ul>
-                    <li><b><%= LocalizeString("WhoWillSee.Text") %></b></li>
+            <div class="securityMenu journalSecurityMenu dnnClear">
+                <div class="handle journalHandle"></div>
+                <ul class="securityMenuList journalSecurityMenuList">
+                    <li class="securityMenuListItem  journalListItem journalListItemPrivacy"><b><%= LocalizeString("WhoWillSee.Text") %></b></li>
                     <% if (IsGroup && !IsPublicGroup)
                     { %>
-                    <li><input type="radio" name="privacy" value="R" checked="checked" aria-label="Security" /><%= LocalizeString("GroupMembers.Text") %></li>
+                    <li class="securityMenuListItem journalListItem journalListItemPrivacyGroupMembers"><input type="radio" name="privacy" value="R" checked="checked" aria-label="Security" /><%= LocalizeString("GroupMembers.Text") %></li>
                     <% }
                     else
                     { %>
-                    <li><input type="radio" name="privacy" value="E" checked="checked" aria-label="Security" /><%= LocalizeString("Everyone.Text") %></li>
-                    <li><input type="radio" name="privacy" value="C" aria-label="Security" /><%= LocalizeString("Community.Text") %></li>
-                    <li><input type="radio" name="privacy" value="F" aria-label="Security" /><%= LocalizeString("Friends.Text") %></li>
+                    <li class="securityMenuListItem journalListItem journalListItemPrivacyEveryone"><input type="radio" name="privacy" value="E" checked="checked" aria-label="Security" /><%= LocalizeString("Everyone.Text") %></li>
+                    <li class="securityMenuListItem journalListItem journalListItemPrivacyCommunity"><input type="radio" name="privacy" value="C" aria-label="Security" /><%= LocalizeString("Community.Text") %></li>
+                    <li class="securityMenuListItem journalListItem journalListItemPrivacyFriends"><input type="radio" name="privacy" value="F" aria-label="Security" /><%= LocalizeString("Friends.Text") %></li>
                     <% if (!IsGroup) { %>
-                    <li><input type="radio" name="privacy" value="U" aria-label="Security" /><%= LocalizeString("Private.Text") %></li>
+                    <li class="securityMenuListItem journalListItem journalListItemPrivacyPrivate"><input type="radio" name="privacy" value="U" aria-label="Security" /><%= LocalizeString("Private.Text") %></li>
                     <% } %>
                     <% } %>
                 </ul>
             </div>
         </div>
-        <a href="#" id="btnShare" aria-label="Share"><%= LocalizeString("Share.Text") %></a>
-        <div id="journalPlaceholder"><%= LocalizeString("SharePlaceHolder.Text") %></div>
-        <div class="dnnClear"></div>
+        <a href="#" id="btnShare" class="journalBtnShare" aria-label="Share"><%= LocalizeString("Share.Text") %></a>
+        <div id="journalPlaceholder" class="journalPlaceholder><%= LocalizeString("SharePlaceHolder.Text") %></div>
+        <div class="journalDiv dnnClear"></div>
     </div>
-    <div id="journalOptionArea">
+    <div id="journalOptionArea" class="journalOptionArea">
         <% if (AllowFiles || AllowPhotos) { %>
-        <div class="fileUploadArea">
-            <div class="jpa" id="tbar-attach-Area">
+        <div class="fileUploadArea journalFileUploadArea">
+            <div class="jpa journalTbarAttachArea" id="tbar-attach-Area">
                 <div class="journal_onlineFileShare">
-                    <span id="tbar-photoText"><%= LocalizeString("SelectPhoto.Text") %></span> 
-                    <span id="tbar-fileText"><%= LocalizeString("SelectFile.Text") %></span>
-                    <div>
-                        <a href="javascript:void(0)" id="photoFromSite" class="dnnSecondaryAction"><%= LocalizeString("BrowseFromSite.Text") %></a> 
+                    <span id="tbar-photoText" class="journalPhotoText"><%= LocalizeString("SelectPhoto.Text") %></span> 
+                    <span id="tbar-fileText" class="journalFileText"><%= LocalizeString("SelectFile.Text") %></span>
+                    <div class="journalPhotoFromSite">
+                        <a href="javascript:void(0)" id="photoFromSite" class="dnnSecondaryAction journalSecondaryAction journalSecondaryActionPhotoFromSite"><%= LocalizeString("BrowseFromSite.Text") %></a> 
                     </div>
                 </div>
                 <div class="journal_localFileShare">
-                    <span class="browser-upload-btn"><%= LocalizeString("UploadFromLocal.Text") %></span>
+                    <span class="browser-upload-btn journalBrowserUploadButton"><%= LocalizeString("UploadFromLocal.Text") %></span>
                     <input id="uploadFileId" type="file" name="files[]" aria-label="Upload" />
                 </div>
-                <div style="clear:both; padding: 0; margin: 0;"></div>
+                <div style="clear:both; padding: 0; margin: 0;" class="journalDivBelowJournalBrowserUploadButton"></div>
             </div>
-            <div id="itemUpload">
-                <div class="fileupload-error dnnFormMessage dnnFormValidationSummary" style="display:none;"></div>
+            <div id="itemUpload" class="journalItemUpload">
+                <div class="fileupload-error dnnFormMessage dnnFormValidationSummary journal" style="display:none;"></div>
                 <div class="progress_bar_wrapper">
                         <div class="progress_context" style="margin:10px 0px; display:none;">
-                            <div class="upload_file_name" style="margin-top:5px; margin-bottom:-5px;"></div>
-                            <div class="progress-bar green">
-                                <div style="width:0px;">
-                                    <span></span> 
+                            <div class="upload_file_name journalUploadFileName" style="margin-top:5px; margin-bottom:-5px;"></div>
+                            <div class="progress-bar green journalProgressBarColor">
+                                <div style="width:0px;" class="journalProgressBarDiv">
+                                    <span class="journalProgressBarSpan"></span> 
                                 </div>
                             </div>
                         </div>
                     </div>
                 
-                <div class="filePreviewArea"></div>
+                <div class="filePreviewArea journalFilePreviewArea"></div>
             </div>
         </div>
         <% } %>
-        <div class="jpa" id="linkArea">
-            <div id="linkClose"></div>
-            <div id="imagePreviewer">
-                <div id="image">
+        <div class="jpa journalLinkArea" id="linkArea">
+            <div id="linkClose" class="journalLinkClose"></div>
+            <div id="imagePreviewer" class="journalImagePreviewer">
+                <div id="image" class="journalImage">
                     <img src='' alt="Preview" />
                 </div>
-                <span id="imgPrev"><<</span><span id="imgCount">1 <%= LocalizeString("Of.Text") %> 10</span><span id="imgNext">>></span>
+                <span id="imgPrev" class=journalImagePreview"><<</span><span id="imgCount" class="journalImgCounty">1 <%= LocalizeString("Of.Text") %> 10</span><span id="imgNext" class="journalImgNext">>></span>
             </div>
-            <div id="linkInfo">
+            <div id="linkInfo" class="journalLinkInfo">
                 <b></b>
                 <p></p>
             </div>
@@ -101,10 +101,10 @@
 
 <%} %>
 
-<div id="journalItems">
-    <dnnj:JournalListControl ID="ctlJournalList" runat="server"/>
+<div id="journalItems" class="journalItems">
+    <dnnj:JournalListControl ID="ctlJournalList" runat="server" CssClass="journalItemsList"/>
 </div>
-<a href="#" style="display:none;" id="getMore" class="dnnPrimaryAction"><%= LocalizeString("GetMore.Text") %></a>
+<a href="#" style="display:none;" id="getMore" class="dnnPrimaryAction journalPrimaryAction"><%= LocalizeString("GetMore.Text") %></a>
 
 <script type="text/javascript">
     var InputFileNS = {};
