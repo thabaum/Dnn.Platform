@@ -124,7 +124,7 @@ namespace DotNetNuke.Modules.Journal.Components {
                         sImage = subM.Groups[9].Value;
                         ImageInfo img = new ImageInfo();
                         img.URL = sImage;
-                        link.Images.Add(img);
+                        link.Images.Add(item: img);
                         i += 1;
                     }
                 }
