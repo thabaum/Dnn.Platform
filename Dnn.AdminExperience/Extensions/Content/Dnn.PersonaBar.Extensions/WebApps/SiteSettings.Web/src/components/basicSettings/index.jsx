@@ -169,11 +169,13 @@ class BasicSettingsPanelBody extends Component {
                     />
                     <Label
                         label={resx.get("plDescriptionCount.Text") }
+                        id={siteDescriptionCount}
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.Description}
                         onChange={this.onSettingChange.bind(this, "Description") }
                         enabled={canEdit}
+                        id={siteDescription}
                     />
                 </InputGroup>
                 <InputGroup>
@@ -211,12 +213,13 @@ class BasicSettingsPanelBody extends Component {
                         label={resx.get("plKeyWords") }
                     />                    
                     <Label
-                        label={resx.get("plKeyWordsCount.Text") }
+                        id={siteKeyWordsCount}
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.KeyWords}
                         onChange={this.onSettingChange.bind(this, "KeyWords") }
                         enabled={canEdit}
+                        id={siteKeyWords}
                     />
                 </InputGroup>
                 <InputGroup>
@@ -329,7 +332,7 @@ class BasicSettingsPanelBody extends Component {
                             label={resx.get("plPortalName") }
                         />                    
                         <Label
-                            label={resx.get("plTitleCount.Text") }
+                            id={siteTitleCount}
                         />
                         <SingleLineInputWithError
                             inputStyle={{ margin: "0" }}
@@ -340,6 +343,7 @@ class BasicSettingsPanelBody extends Component {
                             onChange={this.onSettingChange.bind(this, "PortalName") }
                             style={{ width: "100%" }}
                             enabled={canEdit}
+                            id={siteTitle}
                         />
                     </InputGroup>
                     <GridSystem numberOfColumns={2}>{[columnOne, columnTwo]}</GridSystem>
