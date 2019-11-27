@@ -168,8 +168,10 @@ class BasicSettingsPanelBody extends Component {
                         label={resx.get("plDescription") }
                     />
                     <Label
-                        label={resx.get("plDescriptionCount.Text") }
                         id={siteDescriptionCount}
+                    />
+                    <Label
+                        label={resx.get("Characters.Text") }
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.Description}
@@ -214,6 +216,9 @@ class BasicSettingsPanelBody extends Component {
                     />                    
                     <Label
                         id={siteKeyWordsCount}
+                    />
+                    <Label
+                        label={resx.get("Characters.Text") }
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.KeyWords}
@@ -333,6 +338,9 @@ class BasicSettingsPanelBody extends Component {
                         />                    
                         <Label
                             id={siteTitleCount}
+                        />
+                        <Label
+                        label={resx.get("Characters.Text") }
                         />
                         <SingleLineInputWithError
                             inputStyle={{ margin: "0" }}
