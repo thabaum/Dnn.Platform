@@ -14,7 +14,7 @@ define(['jquery',
         if (chars < 78) {
             document.getElementById("siteTitleCount").style.color = 'green';
             document.getElementById("siteTitleCount").style.fontWeight = 'bold';
-            $('#titleCount').text(chars);
+            $('#siteTitleCount').text(chars);
         }
         else {
             document.getElementById("siteTitleCount").style.color = 'red';
