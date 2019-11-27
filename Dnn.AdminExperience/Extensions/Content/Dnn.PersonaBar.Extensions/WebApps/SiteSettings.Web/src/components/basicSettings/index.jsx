@@ -167,11 +167,9 @@ class BasicSettingsPanelBody extends Component {
                         tooltipMessage={resx.get("plDescription.Help") }
                         label={resx.get("plDescription") }
                     />
-                    <Label
-                        id={siteDescriptionCount}
-                    />
-                    <Label
-                        label={resx.get("Characters.Text") }
+                    <span
+                        id="siteDescriptionCount"
+                        class="site-description-count"
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.Description}
@@ -214,11 +212,9 @@ class BasicSettingsPanelBody extends Component {
                         tooltipMessage={resx.get("plKeyWords.Help") }
                         label={resx.get("plKeyWords") }
                     />                    
-                    <Label
-                        id={siteKeyWordsCount}
-                    />
-                    <Label
-                        label={resx.get("Characters.Text") }
+                    <span
+                        id="siteKeyWordsCount"
+                        class="site-keywords-count"
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.KeyWords}
@@ -336,11 +332,9 @@ class BasicSettingsPanelBody extends Component {
                             tooltipMessage={resx.get("plPortalName.Help") }
                             label={resx.get("plPortalName") }
                         />                    
-                        <Label
-                            id={siteTitleCount}
-                        />
-                        <Label
-                        label={resx.get("Characters.Text") }
+                        <span
+                            id="siteTitleCount"
+                            class="site-title-count"                               
                         />
                         <SingleLineInputWithError
                             inputStyle={{ margin: "0" }}
