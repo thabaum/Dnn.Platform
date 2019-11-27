@@ -1446,7 +1446,4 @@
   <data name="CharactersRemaining.Text" xml:space="preserve">
     <value>Characters Remaining</value>
   </data>
-   <data name="NoCharactersRemaining.Text" xml:space="preserve">
-    <value>No Characters Remaining</value>
-  </data>
 </root>
