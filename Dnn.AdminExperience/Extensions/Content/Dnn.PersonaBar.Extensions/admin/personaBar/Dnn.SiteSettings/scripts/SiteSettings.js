@@ -14,7 +14,6 @@ define(['jquery',
         if (chars < 78) {
             document.getElementById("titleCount").style.color = 'green';
             document.getElementById("titleCount").style.fontWeight = 'bold';
-
             $('#titleCount').text(chars);
         }
         else {
