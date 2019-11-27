@@ -211,7 +211,7 @@ class BasicSettingsPanelBody extends Component {
                         label={resx.get("plKeyWords") }
                     />                    
                     <Label
-                        label={resx.get("plKeywordsCount.Text") }
+                        label={resx.get("plKeyWordsCount.Text") }
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.KeyWords}
