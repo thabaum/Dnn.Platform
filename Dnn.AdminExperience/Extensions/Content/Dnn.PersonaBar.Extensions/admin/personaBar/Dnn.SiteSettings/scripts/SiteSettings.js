@@ -6,51 +6,51 @@ define(['jquery',
     $('#siteTitle').keydown(updateTitleCount);
     $('#siteDescription').keyup(updateDescriptionCount);
     $('#siteDescription').keydown(updateDescriptionCount);
-    $('#siteKeywords').keyup(updateKeywordsCount);
-    $('#siteKeywords').keydown(updateKeywordsCount);
+    $('#siteKeyWords').keyup(updateKeyWordsCount);
+    $('#siteKeyWords').keydown(updateKeyWordsCount);
 
     function updateTitleCount() {
         var chars = $(this).val().length;
         if (chars < 78) {
-            document.getElementById("titleCount").style.color = 'green';
-            document.getElementById("titleCount").style.fontWeight = 'bold';
+            document.getElementById("siteTitleCount").style.color = 'green';
+            document.getElementById("siteTitleCount").style.fontWeight = 'bold';
             $('#titleCount').text(chars);
         }
         else {
-            document.getElementById("titleCount").style.color = 'red';
-            document.getElementById("titleCount").style.fontWeight = 'bolder';
-            $('#titleCount').text(chars);
+            document.getElementById("siteTitleCount").style.color = 'red';
+            document.getElementById("siteTitleCount").style.fontWeight = 'bolder';
+            $('#siteTitleCount').text(chars);
         }
     }
     function updateDescriptionCount() {
         var chars = $(this).val().length;
         if (chars < 120) {
-            document.getElementById("descriptionCount").style.color = 'blue';
-            document.getElementById("descriptionCount").style.fontWeight = 'bold';
-            $('#descriptionCount').text(chars);
+            document.getElementById("siteDescriptionCount").style.color = 'blue';
+            document.getElementById("siteDescriptionCount").style.fontWeight = 'bold';
+            $('#siteDescriptionCount').text(chars);
         }
         else if (chars < 320) {
-            document.getElementById("descriptionCount").style.color = 'green';
-            document.getElementById("descriptionCount").style.fontWeight = 'bold';
-            $('#descriptionCount').text(chars);
+            document.getElementById("siteDescriptionCount").style.color = 'green';
+            document.getElementById("siteDescriptionCount").style.fontWeight = 'bold';
+            $('#siteDescriptionCount').text(chars);
         }
         else {
-            document.getElementById("descriptionCount").style.color = 'red';
-            document.getElementById("descriptionCount").style.fontWeight = 'bolder';
-            $('#descriptionCount').text(chars);
+            document.getElementById("siteDescriptionCount").style.color = 'red';
+            document.getElementById("siteDescriptionCount).style.fontWeight = 'bolder';
+            $('#siteDescriptionCount').text(chars);
         }
     }
-    function updateKeywordsCount() {
+    function updateKeyWordsCount() {
         var chars = $(this).val().length;
         if (chars < 68) {
-            document.getElementById("keywordsCount").style.color = 'green';
-            document.getElementById("keywordsCount").style.fontWeight = 'bold';
-            $('#keywordsCount').text(chars);
+            document.getElementById("siteKeyWordsCount").style.color = 'green';
+            document.getElementById("siteKeyWordsCount").style.fontWeight = 'bold';
+            $('#sitekeyWordsCount').text(chars);
         }
         else {
-            document.getElementById("keywordsCount").style.color = 'red';
-            document.getElementById("keywordsCount").style.fontWeight = 'bolder';
-            $('#keywordsCount').text(chars);
+            document.getElementById("siteKeyWordsCount").style.color = 'red';
+            document.getElementById("siteKeyWordsCount").style.fontWeight = 'bolder';
+            $('#siteKeyWordsCount').text(chars);
         }
     }
     function ($, cf) {
