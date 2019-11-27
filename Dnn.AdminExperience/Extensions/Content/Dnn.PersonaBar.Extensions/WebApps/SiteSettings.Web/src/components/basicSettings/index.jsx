@@ -167,6 +167,9 @@ class BasicSettingsPanelBody extends Component {
                         tooltipMessage={resx.get("plDescription.Help") }
                         label={resx.get("plDescription") }
                     />
+                    <Label
+                        label={resx.get("plDescriptionCount.Text") }
+                    />
                     <MultiLineInputWithError
                         value={state.basicSettings.Description}
                         onChange={this.onSettingChange.bind(this, "Description") }
@@ -206,6 +209,9 @@ class BasicSettingsPanelBody extends Component {
                     <Label
                         tooltipMessage={resx.get("plKeyWords.Help") }
                         label={resx.get("plKeyWords") }
+                    />                    
+                    <Label
+                        label={resx.get("plKeywordsCount.Text") }
                     />
                     <MultiLineInputWithError
                         value={state.basicSettings.KeyWords}
@@ -321,6 +327,9 @@ class BasicSettingsPanelBody extends Component {
                         <Label
                             tooltipMessage={resx.get("plPortalName.Help") }
                             label={resx.get("plPortalName") }
+                        />                    
+                        <Label
+                            label={resx.get("plTitleCount.Text") }
                         />
                         <SingleLineInputWithError
                             inputStyle={{ margin: "0" }}
